@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: 'Futura', sans-serif;
+  background: #F5F2E7;
+  color: #1C1C1C;
+  overflow-x: hidden;
+}
+
+/* Section Styles */
+.section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section:nth-child(odd) {
+  background: #2E3B32;
+  color: #F5F2E7;
+}
+
+.section:nth-child(even) {
+  background: #F5F2E7;
+  color: #1C1C1C;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Wolf Styles */
+.wolf-container {
+  position: absolute;
+  bottom: 5%;
+  left: -100px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.wolf {
+  width: 60px;
+  max-width: 8vw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.wolf-forward {
+  display: block;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #F5F2E7;
+  color: #1C1C1C;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.section:nth-child(odd) .project-card {
+  background: #3B4A3E;
+  color: #F5F2E7;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
